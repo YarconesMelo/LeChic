@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  background-color: #7b1b38;
+  width: 100vw;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carinho h1 {
+  color: white;
+  font-size: 10px;
+  margin-right: 3px;
+}
+
+.carinho img {
+  width: 20px;
+  height: auto;
+}
