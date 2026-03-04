@@ -1,13 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
 :root {
   --cor-primaria: #7b1b38;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 #header {
@@ -19,18 +30,18 @@
   align-items: center;
 }
 
-.carinho {
+.carrinho {
   display: flex;
   align-items: center;
 }
 
-.carinho h1 {
+.carrinho p {
   color: white;
   font-size: 12px;
   margin-right: 3px;
 }
 
-.carinho img {
+.carrinho img {
   width: 20px;
   height: auto;
 }
@@ -77,6 +88,7 @@
 
 .banner {
   position: relative;
+  overflow: hidden;
 }
 
 .banner img {
@@ -96,6 +108,77 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.lingerie p {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 25px;
+  font-weight: bold;
+}
+
+.carrossel {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carrossel-container {
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.carrossel-fotos {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  touch-action: pan-y;
+}
+
+.carrossel-fotos img {
+  width: 30%;
+  height: auto;
+  flex: 0 0 25%;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10%;
+  color: white;
+  backdrop-filter: blur(2px);
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .carrossel-fotos img {
+    flex: 0 0 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .centerLogo {
     font-size: 13px;
@@ -105,7 +188,7 @@
     font-size: 18px;
   }
 
-  .carinho h1 {
+  .carrinho h1 {
     font-size: 10px;
   }
 
@@ -115,5 +198,14 @@
     font-size: 17px;
     max-width: 170px;
     text-align: center;
+  }
+
+  .carrossel {
+    width: 95%;
+  }
+
+  .carrossel-fotos img {
+    flex: 0 0 50%;
+    padding: 5px;
   }
 }
