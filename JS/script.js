@@ -2,7 +2,7 @@ const carrossel = document.querySelector(".carrossel-fotos");
 const btnNext = document.querySelector(".right");
 const btnPrev = document.querySelector(".left");
 
-const imagens = document.querySelectorAll(".carrossel-fotos img");
+const imagens = document.querySelectorAll(".carrossel-fotos .produto");
 let imagensVisiveis = window.innerWidth <= 900 ? 2 : 4;
 
 let currentIndex = imagensVisiveis;
@@ -16,7 +16,7 @@ for (let i = 0; i < imagensVisiveis; i++) {
   carrossel.insertBefore(cloneFim, carrossel.firstChild);
 }
 
-const todasImagens = document.querySelectorAll(".carrossel-fotos img");
+const todasImagens = document.querySelectorAll(".carrossel-fotos .produto");
 
 // posição inicial correta
 window.onload = () => {
