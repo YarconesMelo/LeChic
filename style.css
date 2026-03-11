@@ -221,6 +221,47 @@ img {
   color: var(--cor-primaria);
 }
 
+/* BOTÃO WHATSAPP */
+.btn-whats {
+  width: 55px;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 999;
+  animation: pulseWhats 2.5s infinite;
+  transition: transform 0.3s ease;
+}
+
+.btn-whats img {
+  width: 100%;
+  display: block;
+}
+
+/* efeito quando passa o mouse */
+
+.btn-whats:hover {
+  transform: scale(1.12);
+}
+
+/* animação profissional */
+
+@keyframes pulseWhats {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
 /* Responsividade */
 @media (max-width: 900px) {
   .produto {
@@ -256,6 +297,12 @@ img {
   .produto {
     flex: 0 0 50%;
     padding: 5px;
+  }
+
+  .btn-whats {
+    width: 40px;
+    bottom: 20px;
+    right: 15px;
   }
 }
 
@@ -368,6 +415,10 @@ img {
 
 .loja-segura img {
   width: 120px;
+}
+
+.loja-segura .pix {
+  width: 70px;
 }
 
 .loja-segura .cadeado {
