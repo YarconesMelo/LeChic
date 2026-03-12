@@ -55,3 +55,19 @@ document.querySelectorAll(".carrossel").forEach((carrosselWrapper) => {
     }
   });
 });
+
+// ======= MINI CARROSSEL =======
+const track = document.querySelector(".msg-track");
+const messages = document.querySelectorAll(".msg-item");
+
+let index = 0;
+
+setInterval(() => {
+  index++;
+
+  if (index >= messages.length) {
+    index = 0;
+  }
+
+  track.style.transform = `translateY(-${index * 34}px)`;
+}, 3000);
