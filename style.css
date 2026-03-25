@@ -366,7 +366,7 @@ img {
 /* ======= FOOTER =======*/
 
 .footer {
-  background: #6f0f25;
+  background: var(--cor-primaria);
   color: white;
   margin-top: 20px;
   padding-top: 15px;
@@ -420,7 +420,7 @@ img {
 }
 
 .social-icons i {
-  font-size: 30px;
+  font-size: 45px;
   color: white;
   transition: 0.3s;
 }
@@ -524,7 +524,7 @@ img {
   }
 
   .footer-logo {
-    width: 220px;
+    width: 120px;
   }
 
   .titulo-atendimento {
