@@ -6,6 +6,9 @@ document.querySelectorAll(".carrossel").forEach((carrosselWrapper) => {
   const imagens = carrossel.querySelectorAll(".produto");
 
   let imagensVisiveis = window.innerWidth <= 900 ? 2 : 4;
+  window.addEventListener("resize", () => {
+    imagensVisiveis = window.innerWidth <= 900 ? 2 : 4;
+  });
   let currentIndex = imagensVisiveis;
 
   for (let i = 0; i < imagensVisiveis; i++) {
@@ -18,10 +21,10 @@ document.querySelectorAll(".carrossel").forEach((carrosselWrapper) => {
 
   const todasImagens = carrossel.querySelectorAll(".produto");
 
-  window.addEventListener("load", () => {
+  setTimeout(() => {
     const largura = todasImagens[0].clientWidth;
     carrossel.style.transform = `translateX(-${currentIndex * largura}px)`;
-  });
+  }, 100);
 
   function moverCarrossel() {
     const largura = todasImagens[0].clientWidth;
