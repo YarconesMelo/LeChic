@@ -74,3 +74,50 @@ setInterval(() => {
 
   track.style.transform = `translateY(-${index * 34}px)`;
 }, 3000);
+
+// ======= MENU LATERAL (SIDEBAR) E MODAIS =======
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-btn");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const modalBtns = document.querySelectorAll(".open-modal-btn");
+const closeModalBtns = document.querySelectorAll(".close-modal-btn");
+const modals = document.querySelectorAll(".modal");
+
+function openSidebar(e) {
+  if (e) e.preventDefault();
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeAll(e) {
+  if (e) e.preventDefault();
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+  modals.forEach((m) => m.classList.remove("active"));
+}
+
+menuBtn.addEventListener("click", openSidebar);
+closeBtn.addEventListener("click", closeAll);
+overlay.addEventListener("click", closeAll);
+
+// Configurar botões que abrem os modais
+modalBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetModalId = btn.getAttribute("data-modal");
+    const targetModal = document.getElementById(targetModalId);
+
+    // Fecha a sidebar mas deixa o overlay ativo para o modal
+    sidebar.classList.remove("active");
+    overlay.classList.add("active");
+
+    // Abre o modal
+    if (targetModal) targetModal.classList.add("active");
+  });
+});
+
+// Configurar botões que fecham os modais
+closeModalBtns.forEach((btn) => {
+  btn.addEventListener("click", closeAll);
+});

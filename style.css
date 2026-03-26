@@ -319,6 +319,161 @@ img {
   }
 }
 
+/* ======= SIDEBAR MENU ======= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  transition: left 0.4s ease;
+  padding-top: 60px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--cor-primaria);
+}
+
+.sidebar-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.sidebar-menu li a:hover {
+  background-color: var(--cor-primaria);
+  color: white;
+}
+
+/* ======= MODAIS ======= */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1100; /* Acima do overlay */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+  padding: 40px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.close-modal-btn:hover {
+  color: var(--cor-primaria);
+}
+
+.modal h2 {
+  color: var(--cor-primaria);
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-family: "DM Serif Display", serif;
+  text-align: center;
+}
+
+.modal-body {
+  color: #444;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.modal-body p {
+  margin-bottom: 15px;
+}
+
+.modal-body ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.modal-body ul li {
+  margin-bottom: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* ======= RESPONSIVIDADE =======*/
 @media (max-width: 900px) {
   .produto {
