@@ -497,13 +497,13 @@ img {
   }
 
   #menu a {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .banner h2 {
     top: 5%;
-    right: 5%;
-    font-size: 17px;
+    right: 3%;
+    font-size: 15px;
     max-width: 170px;
     text-align: center;
   }
