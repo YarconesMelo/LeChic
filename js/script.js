@@ -97,7 +97,11 @@ function closeAll(e) {
   modals.forEach((m) => m.classList.remove("active"));
 }
 
-menuBtn.addEventListener("click", openSidebar);
+menuBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation(); // 🔥 IMPORTANTE no mobile
+  openSidebar();
+});
 closeBtn.addEventListener("click", closeAll);
 overlay.addEventListener("click", closeAll);
 
